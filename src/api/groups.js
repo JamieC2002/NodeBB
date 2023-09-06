@@ -30,6 +30,8 @@ function isOwner(caller, groupName) {
             // The next line calls a function in a module that has not been updated to TS yet
             // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
             groups_1.default.ownership.isOwner(caller.uid, groupName),
+            // The next line calls a function in a module that has not been updated to TS yet
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
             groups_1.default.getGroupData(groupName),
         ]);
         const check = isOwner || hasAdminPrivilege || (isGlobalModerator && !group.system);

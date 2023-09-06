@@ -70,7 +70,9 @@ async function isOwner(caller: Caller, groupName: string): Promise<void> {
         // The next line calls a function in a module that has not been updated to TS yet
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
         groups.ownership.isOwner(caller.uid, groupName) as boolean,
-        (groups.getGroupData as (groupName: string) => GroupData)(groupName),
+        // The next line calls a function in a module that has not been updated to TS yet
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+        groups.getGroupData(groupName) as GroupData,
     ]);
 
     const check: boolean = isOwner || hasAdminPrivilege || (isGlobalModerator && !group.system);
